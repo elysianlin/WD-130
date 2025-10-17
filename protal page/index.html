@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Elysian • Home </title>
+    <link rel="icon" href="images/logo_circle.ico" type="img/x-ico" />
+</head>
+
+<script>
+    const footer = document.querySelector('footer, .site-footer');
+    const ioFooter = new IntersectionObserver(
+        ([entry]) => {
+        document.body.classList.toggle('at-footer', entry.intersectionRatio > 0.35);
+        },
+        {
+        threshold: [0, 0.35, 1],
+        rootMargin: '0px 0px 0px 0px'
+        }
+    );
+
+    if (footer) ioFooter.observe(footer);
+</script>
+
+<body>
+    <main id="content">
+        <header class="hero">
+            <div class="hero_top">
+                <a href=index.html><img id=logo src="images/logo_title.png" alt="Elysian Logo" ></a>
+                <nav class="nav_header">
+                    <ul class="nav_list">
+                        <a href="index.html">Home</a> |
+                        <a href="../wwr/index.html" target="_blank">WWR</a> |
+                        <a href="ICE.html">ICE</a> |
+                        <a href="aboutme.html">About Me</a> 
+                    </ul>
+                </nav>
+            </div>
+        
+            <div class="hero_center">
+                <h1>Elysian Lin</h1>
+                <p>WDD 130 Portal Page</p>
+            </div>
+
+            <div class="scroll-down">↓</div>
+        </header>
+
+    
+        <section class="aboutme">
+            <h2 class="aboutme_title fade-up delay-1">About Me</h2>
+            <div class="fade-up delay-2">
+            <img src="images/IMG_1964.JPG" alt="About Me">
+            </div>
+            <aritcle class="text fade-up delay-3">
+                <p>I'm from Taiwan.</p>
+                <p>Student at BYUI</p>
+                <ul>
+                    <li>Major: Biochemistry</li>
+                    <li>Minor: Web Development</li>
+                </ul>
+            </aritcle>
+            <p class="more fade-up delay-3"><a href=aboutme.html>read more →</a></p>
+        </article>
+        </section>
+
+        <section  class="quicklinks">
+            <h2 class="quicklinks_title fade-up ">Quick Links</h2>
+            <div class="quicklinks_items fade-up ">
+                <a href="../wwr/index.html">
+                    <span class="ql_name">WWR</span>
+                    <span class="ql_arrow">→</span>
+                </a>
+                <div class="divider"></div>
+            </div>
+
+            <div class="quicklinks_items fade-up ">
+                <a href="ice/index.html">
+                    <span class="ql_name">ICE Challenge</span>
+                    <span class="ql_arrow">→</span>
+                </a>
+                <div class="divider"></div>
+            </div>
+
+            <div class="quicklinks_items fade-up">
+                <a href="DN/index.html">
+                    <span class="ql_name">Design Note</span>
+                    <span class="ql_arrow">→</span>
+                </a>
+            </div>
+        </section>
+        
+        <script>
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (document.body.classList.contains('at-footer')) return;
+
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    } else {
+                        entry.target.classList.remove('show');
+                    }
+                    });
+                }, { threshold: 0.5 });
+
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+        
+        window.addEventListener("scroll", ()=> {
+            const hero = document.querySelector(".hero");
+            const scrollY = window.scrollY;
+            hero.style.backgroundPostionY = '${scrollY*0.4}px';      
+        });
+        </script>
+
+    </main>
+</body>
+<footer class="site-footer">
+    <nav class="footer-nav">
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="wwr/index.html">WWR</a></li>
+        <li><a href="ICE.html">ICE</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        </ul>
+    </nav>
+
+    <p class="legal">
+        ©copyright 2025. All rights reserved.
+    </p>
+    <p class="policies">
+        <a href="#">Terms of Service</a>
+        <span class="dot">•</span>
+        <a href="#">Privacy Policy</a>
+    </p>
+
+    <div class="social">
+        <a class="social__link facebook" href="https://facebook.com" target="_blank">
+            <img src="images/facebook.png" data-color="images/facebook-Icon-color.png" alt="Facebook icon">
+        </a>
+
+        <a class="social__link instagram" href="https://instagram.com" target="_blank">
+            <img src="images/instagram.png" data-color="images/instagram-Icon-color.png" alt="Instagram icon">
+        </a>
+
+        <a class="social__link youtube" href="https://youtube.com" target="_blank">
+            <img src="images/youtube.png" data-color="images/youtube-Icon-color.png" alt="YouTube icon">
+        </a>
+    </div>
+    <script>
+        document.querySelectorAll('.social__link').forEach(link => {
+        const img = link.querySelector('img');
+        const graySrc  = img.getAttribute('src');
+        const colorSrc = img.dataset.color;
+
+        link.addEventListener('mouseenter', () => {
+            img.src = colorSrc;
+        });
+
+        link.addEventListener('mouseleave', () => {
+            img.src = graySrc;
+        });
+        });
+    </script>
+  <img class="footer-logo" src="images/logo_title.png" alt="Elysian Logo">
+</footer>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Favorite Devotionals</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-image">
+        <h1>My Favorite<br>Devotionals</h1>
+      </div>
+    </header>
+    <main>
+      <div class="content-box">
+        <h2 id="devo-table-title">Favorite Devotionals</h2>
+        <table id="devo-table">
+          <thead>
+            <tr>
+              <th scope="col">Speaker</th>
+              <th scope="col">Title</th>
+              <th scope="col">Location</th>
+              <th scope="col">Year</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+            <td>Kevin G. Brown</td>
+            <td>Hastening the Work in You</td>
+            <td>BYUI</td>
+            <td>2025</td>
+            </tr>
+            <tr>
+              <td>David A. Dednar</td>
+              <td>The Character of Christ</td>
+              <td>BYUI</td>
+              <td>2003</td>
+              </td>
+            </tr>
+            <tr>
+              <td>Jeffrey R.Holland</td>
+              <td>Cast Not Away Therfore Your Confience</td>
+              <td>BYU</td>
+              <td>1999</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="devo-form-title">Share Your Favorite Devotional</h2>
+        <form id="devo-form">
+          <label>Speaker: </label>
+          <input id="speaker" type="text" required>
+          <label>Title: </label>
+          <input id="title" type="text"  requored>
+          <label>Location: </label>
+          <input id="location" type="text" required>
+          <label>Year: </label>
+          <input id="year" type="number" min="1900" max="2100" required>
+          <button type="submit">Submit Devotional</button>
+        </form>
+
+        <script>
+          document.getElementById("devo-form").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+          
+            const speaker = document.getElementById("speaker").value;
+            const title = document.getElementById("title").value;
+            const location = document.getElementById("location").value;
+            const year = document.getElementById("year").value;
+
+            const table = document.getElementById("devo-table").getElementsByTagName("tbody")[0];
+            const newRow = table.insertRow();
+
+            newRow.insertCell(0).textContent = speaker;
+            newRow.insertCell(1).textContent = title;
+            newRow.insertCell(2).textContent = location;
+            newRow.insertCell(3).textContent = year;
+
+            document.getElementById("devotionalForm").reset();
+          });
+        </script>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

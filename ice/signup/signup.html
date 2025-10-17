@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Feed Sign Up</title>
+    <style>
+        body {
+            background: #786040;
+            display:flex;
+            justify-content: center;
+            align-items:flex-start;
+            padding-block:32px;
+            padding-inline:16px;
+        }
+
+        .card {
+            width: 480px;
+            height: auto;
+            background-color: #ffffff;
+            border: 12px solid #103079;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        .header {
+            overflow: hidden;
+            background-image: url(images/jesus_feeds_5000.jpeg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 200px;
+            position:relative;
+            overflow:hidden;
+            padding:0;
+            margin:0;
+        }
+        #closeBtn {
+            position: absolute;
+            text-align: center;
+            top: 12px;
+            left: 10px;
+            width: 30px;
+            height: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            z-index:2;
+        }
+        .title {
+            position: center;
+            overflow: hidden;
+            color:white;
+            text-shadow: 2px 2.5px 0.5px #000000;
+            padding: 78px;
+            z-index: 2;
+            line-height:15px ;
+        }
+        .title h1 {
+            font-size: 42px;
+        }
+        .title h2 {
+            font-size: 30px;
+        }
+
+        #formContainer {
+            font-weight: bold;
+            text-align: center;
+            padding: 14px 18px 6px;
+        }
+        #formContainer h3 {
+            color: black;
+            margin: 6px 0 12px;
+            padding: 15px;
+            font-size: 22px;
+            font-weight: 700;
+            text-align:center;        
+        }
+        #myForm{
+            display:grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 20px 15px;
+            align-items: center;
+            padding-right: 10px;
+            padding-left: 10px;
+            
+        }
+        #myForm label{
+            font-size: 18px;
+            text-align: left;
+        }
+
+        #myForm input[type="text"],
+        #myForm input[type="password"],
+        #myForm input[type="email"]{
+            width: 100%;
+            padding: 6px 8px;
+            border: 1px solid #9ca3af;
+            background: #ffffff;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+        #myForm input[type="text"]:focus,
+        #myForm input[type="password"]:focus,
+        #myForm input[type="email"]:focus{
+            outline: 2px solid #163e90;   /* blue focus ring */
+            outline-offset: 1px;
+        }
+        #myForm > div{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #444444;
+        }
+        #myForm section{
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            color: #444444;
+        }
+        #myForm button[type="submit"]{
+            padding: 4px 10px;
+            border: 1px solid #888888;
+            background: #eaeaea;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        #myForm button[type="submit"]:hover{ background: #f2f2f2; }
+
+        @media (max-width: 480px){
+            #myForm{ grid-template-columns: 1fr; }
+            #myForm label{ justify-self: start; }
+        }   
+
+        #output{
+            padding: 8px 16px 0;
+            text-align: center;
+            color: #444444;
+            font-size: 14px;
+        }
+        .scripture {
+            padding-top: 15px;
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            z-index:1;
+        }
+
+        .scripture img {
+            width: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+            object-fit:cover;
+            display:block;
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <div class="card">
+        <header class="header">
+            <button type="button" id="closeBtn">X</button>
+        <div class="title">
+            <div>
+                <h1> Daily Feed</h1>
+                <h2> Scripture a Day</h2>
+            </div>
+        </div>
+        </header>
+
+        <div id="formContainer">
+            <h3>Sign Up for Daily Scripture Feed</h3>
+            <form id="myForm">
+                
+            
+                    <label for="username">User Name:</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label>Gender:</label>
+                    <div>
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female" required>
+                        <label for="female">Female</label>
+                    </div>
+                
+                <section>
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">Subscribe to newsletter</label>
+                </section>
+
+                <section>
+                    <input type="checkbox" id="conditions" name="conditions" required>
+                    <label for="conditions">I acknowledge the terms and conditions</label>
+                </section>
+
+                <section>
+                    <button type="submit">Submit</button>
+                </section>
+            </form>
+        </div>
+
+        <div id="output"></div>
+
+        <div class="scripture">
+            <a href="https://www.churchofjesuschrist.org/study/scriptures/ot?lang=eng" target="_blank"><img src="images/old_testament.webp" alt="Old Testament"></a> 
+            <a href="https://www.churchofjesuschrist.org/study/scriptures/nt?lang=eng" target="_blank"><img src="images/new_testament.webp" alt="New Testament"></a>
+            <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng" target="_blank"><img src="images/book_of_mormon.webp" alt="Book of Mormon"></a> 
+            <a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament?lang=eng" target="_blank"><img src="images/doctrine_and_covenants.webp" alt="Doctrine and Covenants"></a>
+            <a href="https://www.churchofjesuschrist.org/study/scriptures/pgp?lang=eng" target="_blank"><img src="images/pearl_of_great_price.webp" alt="Pearl of Great Price"></a>
+        </div>
+    
+
+        <script>
+                // Here is some Javascript to start looking forward to wdd131
+                document.getElementById("closeBtn").addEventListener("click", function () {
+                    document.getElementById("formContainer").style.display = "none";
+                });
+                const form = document.getElementById('myForm');
+                const output = document.getElementById('output');
+
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault(); // Stop form from actually submitting
+
+                    const formData = new FormData(form);
+                    const entries = [];
+
+                    for (const [key, value] of formData.entries()) {
+                        if (key == "password") {
+                            entries.push(`<strong>${key}</strong>: ${value} (you should probably encrypt the password)`);
+                        } else {
+                            entries.push(`<strong>${key}</strong>: ${value}`);
+                        }
+                    }
+
+                    output.innerHTML = `
+                    <br>  
+                    <h3>Here is the data that would be sent to the server:</h3>
+                    <ul>
+                        ${entries.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                    `;
+                        });
+        </script>
+    </div>    
+
+</body>
+
+</html>

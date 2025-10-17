@@ -1,0 +1,119 @@
+/* Add your CSS here to style your halloween page */
+
+body {
+    background-color: #020c1a;
+    color:#cc5918;
+}
+
+ul {
+    list-style-type:none;
+    width: 100%;
+    height: auto;
+    margin:0;
+    padding:0;
+    text-align: right;
+}
+ul li {
+    display:inline-block;
+    color:#9966ff;
+    text-align:center;
+    text-shadow:0 0 20px #cdb7ff;
+    padding:10px 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+ul li:hover {
+    color:#00ffff;
+    text-shadow:0 0 20px #e0e0e0;
+}
+
+h1 {
+    text-align: center;
+    text-shadow: 0 0 10px #cc5918;
+    font-size: 4rem;
+}
+img {
+    display: block;
+    width:100%;
+    margin-bottom: 50px;
+}
+
+section {
+    width: 90%;                  
+    max-width: 1000px;         
+    margin: 50px auto;         
+    border-radius: 15px;
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:nth-of-type(1) {
+    background: linear-gradient(135deg, #331a00, #ff7b00);
+    box-shadow: 0 0 20px #ff7b00;
+    color: #fff7e6;
+    text-shadow: 0 0 5px #ff7b00;
+}
+
+section:nth-of-type(1):hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+    box-shadow: 0 0 25px #fe9c02;
+}
+
+section:nth-of-type(1) h2::before {
+    content: "🎃 ";
+    filter: drop-shadow(0 0 5px #ff7b00);
+
+}
+
+section:nth-of-type(2) {
+    background: linear-gradient(135deg, #222, #551a8b);
+    box-shadow: 0 0 20px #551a8b;
+    color: #cdb7ff;
+    text-shadow: 0 0 5px #cdb7ff;
+}
+
+section:nth-of-type(2):hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+    box-shadow: 0 0 25px #9966ff;
+}
+
+section:nth-of-type(2) h2::before {
+    content: "🦇 ";
+    filter: drop-shadow(0 0 5px #cdb7ff);
+}
+
+section:nth-of-type(3) {
+    background: linear-gradient(135deg, #0d0d0d, #2b2b2b); 
+    box-shadow: 0 0 20px #00ffff;
+    color: #e0e0e0;
+    text-shadow: 0 0 5px #00ffff; 
+}
+
+section:nth-of-type(3):hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+    box-shadow: 0 0 25px #66ffff;
+}
+section:nth-of-type(3) h2::before {
+    content: "💀 ";
+    filter: drop-shadow(0 0 5px #00ffff);
+}
+
+section:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+    box-shadow: 0 0 25px #fe9c02;
+}
+
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 20px 0;
+    font-size: 1.2rem;
+    color: #fe9c02; 
+    text-shadow: 0 0 8px #ff7b00;
+}

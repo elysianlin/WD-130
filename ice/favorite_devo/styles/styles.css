@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #d3d3d3, #001f3f);
+  background-repeat: no-repeat; /* Just in case */
+  background-attachment: fixed;
+}
+
+.container {
+  text-align: center;
+}
+
+.header {
+  padding: 20px 0;
+}
+
+.header-image {
+  background-image: url('../images/icenter.png'); /* Replace with your image */
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+
+}
+
+.header-image h1 {
+  margin: 0;
+  line-height: 0.9;
+    font-size: 3.5em;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background: #00000055;
+}
+
+.content-box {
+  background-color: white;
+  margin: 30px auto;
+  width: 90%;
+  max-width: 900px;
+  padding: 40px;
+  box-shadow: 5px 5px 0px black;
+  min-height: 400px;
+}
+
+#devo-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top:20px;
+  margin-bottom: 40px;
+  font-size:1rem;
+}
+
+#devo-table th {
+  background-color: #001f3f;
+  color:white;
+  padding:12px;
+  text-align: center;
+  border-bottom: 3px solid #003366;
+}
+
+#devo-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #ccc;
+}
+
+#devo-table tr:nth-child(even) {
+  background-color: #f0f4f8;
+}
+
+#devo-table tr:hover {
+  background-color: #dceeff;
+  transition: background-color 0.3s;
+}
+
+#devo-table-title {
+  font-size: 1.8rem;
+  color:#001f3f;
+  text-shadow: 1px 1px 2px #ccc;
+  margin-bottom:10px;
+}
+
+#devo-form-title {
+  font-size: 1.8em;
+  color: #001f3f;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px #ccc;
+}
+
+#devo-form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 15px 20px;
+  align-items: center;
+  text-align: left;
+}
+
+#devo-form label {
+  font-weight: bold;
+  color: #001f3f;
+  text-align: right;
+}
+
+#devo-form input {
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 1em;
+  transition: border-color 0.3s;
+}
+
+#devo-form input:focus {
+  border-color: #001f3f;
+  outline: none;
+  box-shadow: 0 0 5px #004080;
+}
+
+#devo-form button {
+  grid-column: span 2;
+  background-color: #001f3f;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#devo-form button:hover {
+  background-color: #004080;
+}
