@@ -4,37 +4,135 @@
         <meta charset="UTF-8">
         <title>Elysian • Design Note</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="DN.css">
         <link rel="icon" href="..//images/logo_circle.ico" type="img/x-ico" />
     </head>
+    
     <body>
-        <header class="logo">
+        <div class="progress" aria-hidden="true"></div>
+        <button id="toTop" aria-label="Back to top">↑</button>
+        <header class="hero">
             <div class="hero_top">
                 <a href=..//home.html><img id=logo src="..//images/logo_title.png" alt="Elysian Logo" ></a>
                 <nav class="nav_header">
                     <ul class="nav_list">
                         <a href="..//home.html">Home</a> |
-                        <a href="../wwr/index.html" target="_blank">WWR</a> |
+                        <a href="../..//wwr/index.html" target="_blank">WWR</a> |
                         <a href="ICE.html">ICE</a> |
                         <a href="aboutme.html">About Me</a> 
                     </ul>
                 </nav>
             </div>
+            <div class="hero_center">
+                <h1>Design Note</h1>
+            </div>
         </header>
 
         <main class="content">
-            <section class="logo">
-                <h1 class="logo-title">Website Logo</h1>
+            <section class="Wlogo reveal">
+                <h1 class="Wlogo-title reveal fade-up delay-1">Website Logo</h1>
                 <hr class="rule">
                 <figure>
-                    <img class="logo-img" src="../images/logo_title.png" alt="Elysian Logo">
+                    <img class="Wlogo-img reveal fade-up delay-2" src="../images/logo_title.png" alt="Elysian Logo">
                 </figure>
             </section>
             <section class="color">
-                <h1 class="color-title">Color Palette</h1>
+                <h1 class="color-title fade-up delay-1">Color Palette</h1>
+                <img class="color-img fade-up delay-2" src="color-Photoroom.png">
+            </section>
+            
+            <section class="typo">
+                <h1 class="typo-title fade-up delay-1">Typography</h1>
 
+                <div class="typo-showcase fade-up delay-2">
+                    <div class="typo-card heading-font reveal">
+                    <h2>Slackside One</h2>
+                    <p class="sample">Elegant Flow & Handwritten Warmth</p>
+                    <span class="font-note">Used for headings and hero titles</span>
+                    </div>
+
+                    <div class="typo-card body-font reveal">
+                    <h2>DM Serif Display</h2>
+                    <p class="sample">Readable · Classic · Refined</p>
+                    <span class="font-note">Used for paragraphs and main content</span>
+                    </div>
+                </div>
             </section>
         </main>
+
+    
+    <script>
+        const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (document.body.classList.contains('at-footer')) return; 
+            if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            } else {
+            entry.target.classList.remove('show'); 
+            }
+        });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.fade-up').forEach((el) => fadeObserver.observe(el));
+
+        const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add('is-visible');
+        });
+        }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+
+        document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+        const root = document.documentElement;
+        const toTop = document.getElementById('toTop');
+
+        function onScroll() {
+        const y = window.scrollY || 0;
+        root.style.setProperty('--scroll', y);
+
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.backgroundPositionY = `${y * 0.4}px`;
+        }
+
+        const dh = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+        const h = window.innerHeight;
+        const p = Math.max(0, Math.min(1, y / (dh - h)));
+        root.style.setProperty('--progress', p);
+
+        if (toTop) toTop.classList.toggle('show', y > 400);
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        if (toTop) {
+        toTop.addEventListener('click', () =>
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+        );
+        }
+
+        document.querySelectorAll('.typo-card').forEach((card) => {
+            const damp=12;
+            card.addEventListener('mousemove', (e) => {
+                const r=card.getBoundingClientRect();
+                const cx=r.left +r.width /2;
+                const cy=r.top+r.height/2;
+                const dx=(eclentX-cx)/(r.width/2);
+                const dy=(ecleentY-cy)/(r.width/2);
+                card.style.transform = 'rotateX(${(-dy * damp)}deg) rotateY(${dx*damp})deg translateZ(0)';
+           })
+           card.addEventListener('mouseleave',()=> {
+            card.style.transform='none';
+           })
+
+        });
+            
+      
+        window.addEventListener('load', () => {
+        setTimeout(() => document.body.classList.add('loaded'), 150); 
+        });
+    </script>
+
     </body>
     <footer class="site-footer">
         <nav class="footer-nav">
