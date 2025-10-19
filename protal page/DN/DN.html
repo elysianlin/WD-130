@@ -91,9 +91,7 @@
         root.style.setProperty('--scroll', y);
 
         const hero = document.querySelector('.hero');
-        if (hero) {
-            hero.style.backgroundPositionY = `${y * 0.4}px`;
-        }
+        
 
         const dh = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
         const h = window.innerHeight;
