@@ -92,7 +92,6 @@ body {
     text-decoration: none;
     transition: color 0.2s ease;
     position:relative;
-    animation: fadeIn 500ms ease-out both;
 }
 
 .nav_list a::after {
@@ -244,7 +243,7 @@ body {
 
 .aboutme .text ul{
     padding-left: 80px;
-    margin-bottom: 18px;
+    margin-top: 20px;
     line-height: 50px;
 }
 
