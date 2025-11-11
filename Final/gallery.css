@@ -74,142 +74,42 @@ header nav a:hover {
     text-align: center;
 }
 
-.hero h2, .hero p, .hero a {
-    grid-area: 1/1/2/2;
-}
-
-.hero h2 {
-    font-family: DM Serif Display, serif;
-    font-size: 65px;
-    letter-spacing: .13em;
-}
-
-.hero p {
-    font-size: 20px;
-    margin-bottom: 50px;
-    font-family: "Raleway", sans-serif;
-    color:#f8f6f2;
-}
-.hero a {
-    font-size: 18px;
-    text-decoration: none;
-    color: white;
-    font-family: "Raleway", sans-serif;
-    display:inline-block;
-    transition: all 0.3s ease;
-    padding: 8px 14px; 
-    border: 2px solid 
-}
-
-.hero a:hover {
-    color:#19150f;
-    text-decoration: none;
-    transform: translateY(4px);
-}
-
-.aboutme{
-    padding: 145px 145px;
+.angry-grid {
     display: grid;
-    grid-template-columns: 1.05fr 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-        "photo title"
-        "photo text";
-    column-gap: 38px;
-    row-gap: 16px;
-    align-items: start;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* responsive, flexible */
+    grid-auto-rows: 300px; 
+    gap: 25px; 
+    padding: 30px; 
+    box-sizing: border-box;
+    margin-top: 55px;
 }
 
-.aboutme_title{
-    padding-top: 85px;
-    grid-area: title;
-    margin: 0 0 18px 0;
-    text-align: left;
-    font-weight: bold;
-    font-size: 45px;
-    letter-spacing: .13em;
-    transform: translateY(12px);
+
+.angry-grid div {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
-.aboutme .text {
-    font-family: DM Serif Display, serif;
-    grid-area: text;
-    align-self: start;
-    padding-top: 10%;
-    padding-left:8%;
-    font-size: 25px;
-    font-weight: 200;
-    letter-spacing: .03em;
+.angry-grid div:hover {
+  transform: scale(1.05);
 }
 
-.aboutme .text ul{
-    padding-left: 80px;
-    margin-top: 20px;
-    line-height: 50px;
-}
+#item-0 { grid-row: span 2; grid-column: span 2; background-image: url("images/fxn 2025-07-13 123616.480.JPG"); }
+#item-1 { grid-column: span 2; background-image: url("images/fxn 2025-10-18 181837.863.jpg"); }
+#item-2 { grid-row: span 2; grid-column: span 2; background-image: url("images/fxn 2025-10-27 142305.557.JPG"); }
+#item-3 { grid-row: span 1; grid-column: span 1; background-image: url("images/fxn 2025-11-04 105125.611.JPG"); }
+#item-4 { grid-column: span 1; background-image: url("images/IMG_5982.JPG"); }
+#item-5 { grid-column: span 2; grid-row: span 2; background-image:url("images/IMG_6652.JPG"); }
+#item-6 { grid-row: span 2; grid-column: span 1; background-image:url("images/fxn\ 2025-11-10\ 172232.566.jpg"); }
+#item-7 { grid-column: span 1; background-image:url(images/fxn\ 2025-11-04\ 105112.521.JPG); }
+#item-8 { grid-column: span 1; background-image:url(images/fxn\ 2025-11-10\ 173035.820.jpg); }
+#item-9 { grid-column: span 1; background-image: url(images/fxn\ 2025-09-30\ 110824.702.JPG); }
+#item-10 { grid-column: span 2; grid-row: span 1; background-image:url("images/fxn\ 2025-04-27\ 145531.701.JPG"); }
+#item-11 { grid-column: span 1; grid-row: span 1; background-image:url(images/fxn\ 2025-08-04\ 141922.655.JPG); }
 
-.aboutme > div {
-    grid-area: photo;
-    grid-row: 1/4;
-    display: flex;
-    justify-content:center;
-}
-
-.aboutme img {
-    height:80vh;
-    width: min(640px, 80%);
-    margin: 0 auto;
-    object-fit:cover;
-    border-radius: 15px;
-    object-fit: cover;
-    transform: translateY(6px);
-    transition: transform .35s ease, box-shadow .35s ease, filter .35s ease;
-}
-
-.artworks {
-    padding: 160px 120px;
-    justify-content: center;
-    align-items: center;
-}
-
-.artwork_text {
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.artwork_text h1 {
-    font-size: 85px;
-    padding-left: 35px;
-}
-
-.artwork_text a {
-    font-size: 17px;
-    font-family: "Raleway", sans-serif;
-    color:#19150f;
-    text-decoration: none;
-    padding-right:35px;
-}
-
-.artwork_text a:hover {
-    color:#93908b;
-    text-decoration: underline;
-}
-.artworks_img {
-    overflow:hidden;
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap:150px;
-}
-
-.artworks_img img {
-    width:100%;
-    height:100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-}
 
 footer {
     font-family: "Raleway", sans-serif;
