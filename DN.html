@@ -1,44 +1,63 @@
 <!DOCTYPE html>
-<html lan="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Elysian • Design Note</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="DN.css">
-        <link rel="icon" href="..//images/logo_circle.ico" type="img/x-ico" />
-    </head>
-    
-    <body>
-        <div class="progress" aria-hidden="true"></div>
-        <button id="toTop" aria-label="Back to top">↑</button>
-        <header class="hero">
-            <div class="hero_top">
-                <a href=..//home.html><img id=logo src="..//images/logo_title.png" alt="Elysian Logo" ></a>
-                <nav class="nav_header">
-                    <ul class="nav_list">
-                        <a href="..//home.html">Home</a> |
-                        <a href="../..//wwr/index.html" target="_blank">WWR</a> |
-                        <a href="ICE.html">ICE</a> |
-                        <a href="aboutme.html">About Me</a> 
-                    </ul>
-                </nav>
-            </div>
-            <div class="hero_center">
-                <h1>Design Note</h1>
-            </div>
-        </header>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="DN.css">
+    <title>Elysian • DesignNote </title>
+    <link rel="icon" href="images copy/logo_circle.ico" type="img/x-ico" />
+</head>
+
+<script>
+    const footer = document.querySelector('footer, .site-footer');
+    const ioFooter = new IntersectionObserver(
+        ([entry]) => {
+        document.body.classList.toggle('at-footer', entry.intersectionRatio > 0.35);
+        },
+        {
+        threshold: [0, 0.35, 1],
+        rootMargin: '0px 0px 0px 0px'
+        }
+    );
+
+    if (footer) ioFooter.observe(footer);
+</script>
+
+<body>
+    <div class="progress" aria-hidden="true"></div>
+    <button id="toTop" aria-label="Baxk to top">↑</button>
+    <header class="hero">
+        <div class="hero_top">
+            <a href=home.html><img id=logo src="images copy/logo_title.png" alt="Elysian Logo" ></a>
+            <nav class="nav_header">
+                <ul class="nav_list">
+                    <a href="index.html">Home</a> |
+                    <a href="../wwr/index.html" target="_blank">WWR</a> |
+                    <a href="ICE.html">ICE</a> |
+                    <a href="aboutme.html">About Me</a> |
+                    <a href="client_report.html"> Cilent Report</a>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="hero_center">
+            <h1>Design Note</h1>
+        </div>
+
+        <div class="scroll-down">↓</div>
+    </header>
 
         <main class="content">
             <section class="Wlogo reveal">
                 <h1 class="Wlogo-title reveal fade-up delay-1">Website Logo</h1>
                 <hr class="rule">
                 <figure>
-                    <img class="Wlogo-img reveal fade-up delay-2" src="../images/logo_title.png" alt="Elysian Logo">
+                    <img class="Wlogo-img reveal fade-up delay-2" src="images copy/logo_title.png" alt="Elysian Logo">
                 </figure>
             </section>
             <section class="color">
                 <h1 class="color-title fade-up delay-1">Color Palette</h1>
-                <img class="color-img fade-up delay-2" src="color-Photoroom.png">
+                <img class="color-img fade-up delay-2" src="images copy/color-Photoroom.png">
             </section>
             
             <section class="typo">
@@ -135,10 +154,11 @@
     <footer class="site-footer">
         <nav class="footer-nav">
             <ul>
-            <li><a href="../home.html">Home</a></li>
+            <li><a href="../index.html">Home</a></li>
             <li><a href="/wwr/index.html">WWR</a></li>
             <li><a href="../ICE.html">ICE</a></li>
             <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="../client_report.html">Cilent Report</a></li>
             </ul>
         </nav>
 
@@ -153,15 +173,15 @@
 
         <div class="social">
             <a class="social__link facebook" href="https://facebook.com" target="_blank">
-                <img src="..//images/facebook.png" data-color="..//images/facebook-Icon-color.png" alt="Facebook icon">
+                <img src="..//images copy/facebook.png" data-color="..//images copy/facebook-Icon-color.png" alt="Facebook icon">
             </a>
 
             <a class="social__link instagram" href="https://instagram.com" target="_blank">
-                <img src="..//images/instagram.png" data-color="..//images/instagram-Icon-color.png" alt="Instagram icon">
+                <img src="..//images copy/instagram.png" data-color="..//images copy/instagram-Icon-color.png" alt="Instagram icon">
             </a>
 
             <a class="social__link youtube" href="https://youtube.com" target="_blank">
-                <img src="..//images/youtube.png" data-color="..//images/youtube-Icon-color.png" alt="YouTube icon">
+                <img src="..//images copy/youtube.png" data-color="..//images copy/youtube-Icon-color.png" alt="YouTube icon">
             </a>
         </div>
         <script>
@@ -179,6 +199,6 @@
             });
             });
         </script>
-        <img class="footer-logo" src="..//images/logo_title.png" alt="Elysian Logo">
+        <img class="footer-logo" src="..//images copy/logo_title.png" alt="Elysian Logo">
     </footer>
 </html>
