@@ -19,7 +19,7 @@ body {
     font-family: DM Serif Display, serif;
     margin: 0;
     padding: 0;
-    background-color: #fefdf9;
+    background-color: #f5f7f2;
     color: #383838;
 }
 
@@ -52,7 +52,7 @@ body {
     min-height: 100svh;
     display: flex;
     flex-direction: column;
-    background: url("images copy/aboutme.jpg") no-repeat center center/cover;
+    background: url("images copy/aboutme.jpeg") no-repeat center center/cover;
     background-attachment: fixed;
     justify-content: space-between;
     align-items: stretch;
