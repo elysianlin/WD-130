@@ -1,0 +1,50 @@
+<footer class="site-footer">
+    <nav class="footer-nav">
+        <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="/wwr/index.html">WWR</a></li>
+        <li><a href="ICE.html">ICE</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="client_report.html">Client Report</a></li>
+        </ul>
+    </nav>
+
+    <p class="legal">
+        ©copyright 2025. All rights reserved.
+    </p>
+    <p class="policies">
+        <a href="#">Terms of Service</a>
+        <span class="dot">•</span>
+        <a href="#">Privacy Policy</a>
+    </p>
+
+    <div class="social">
+        <a class="social__link facebook" href="https://facebook.com" target="_blank">
+            <img src="images/facebook.png" data-color="images/facebook-Icon-color.png" alt="Facebook icon">
+        </a>
+
+        <a class="social__link instagram" href="https://instagram.com" target="_blank">
+            <img src="images/instagram.png" data-color="images/instagram-Icon-color.png" alt="Instagram icon">
+        </a>
+
+        <a class="social__link youtube" href="https://youtube.com" target="_blank">
+            <img src="images/youtube.png" data-color="images/youtube-Icon-color.png" alt="YouTube icon">
+        </a>
+    </div>
+    <script>
+        document.querySelectorAll('.social__link').forEach(link => {
+        const img = link.querySelector('img');
+        const graySrc  = img.getAttribute('src');
+        const colorSrc = img.dataset.color;
+
+        link.addEventListener('mouseenter', () => {
+            img.src = colorSrc;
+        });
+
+        link.addEventListener('mouseleave', () => {
+            img.src = graySrc;
+        });
+        });
+    </script>
+  <img class="footer-logo" src="images/logo_title.png" alt="Elysian Logo">
+</footer>

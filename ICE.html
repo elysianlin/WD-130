@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ICE.css">
+    <title>Elysian • ICE </title>
+    <link rel="icon" href="images/logo_circle.ico" type="img/x-ico" />
+</head>
+
+<script>
+    const footer = document.querySelector('footer, .site-footer');
+    const ioFooter = new IntersectionObserver(
+        ([entry]) => {
+        document.body.classList.toggle('at-footer', entry.intersectionRatio > 0.35);
+        },
+        {
+        threshold: [0, 0.35, 1],
+        rootMargin: '0px 0px 0px 0px'
+        }
+    );
+
+    if (footer) ioFooter.observe(footer);
+</script>
+
+<body>
+    <main id="content">
+        <header class="hero">
+            <div class="hero_top">
+                <a href=home.html><img id=logo src="images/logo_title.png" alt="Elysian Logo" ></a>
+                <nav class="nav_header">
+                    <ul class="nav_list">
+                        <a href="home.html">Home</a> |
+                        <a href="../wwr/index.html" target="_blank">WWR</a> |
+                        <a href="ICE.html">ICE</a> |
+                        <a href="aboutme.html">About Me</a> 
+                    </ul>
+                </nav>
+            </div>
+        
+            <div class="hero_center">
+                <h1>ICE Challenge</h1>
+            </div>
+
+            <div class="scroll-down">↓</div>
+        </header>
+        <section class="Challenge">
+            <div class="Challenge_items fade-up">
+                <a  href="../ice/prophet_cards/nelson.html" target="_blank">
+                    <span class="cha_name">Prophet</span>
+                    <span class="cha_arrow">→</span>
+                </a>
+            </div>
+            <div class="Challenge_items fade-up">
+                <a href="../ice/apostle_spotlight/apostles.html" target="_blank">
+                    <span class="cha_name">Apostles Spotlight</span>
+                    <span class="cha_arrow">→</span>
+                </a>
+            </div>
+            <div class="Challenge_items fade-up">
+                <a href="../ice/grid_flags/flags.html" target="_blank">
+                    <span class="cha_name">Flag</span>
+                    <span class="cha_arrow">→</span>
+                </a>
+            </div>
+            <div class="Challenge_items fade-up">
+                <a href="../ice/halloween/index.html" target="_blank">
+                    <span class="cha_name">Halloween</span>
+                    <span class="cha_arrow">→</span>
+                </a>
+            </div>
+            <div class="Challenge_items fade-up">
+                <a href="../ice/favorite_devo/favdevo.html" target="_blank">
+                    <span class="cha_name">Favorite Devotionals</span>
+                    <span class="cha_arrow">→</span>
+                </a>
+            </div>
+            <div class="Challenge_items fade-up">
+                <a href="../ice/gallery/gallery.html" target="_blank">
+                    <span class="cha_name">Gallery</span>
+                    <span class="cha_arrow">→</span>
+                </a>
+            </div>
+            <div class="Challenge_items fade-up">
+                <a href="../ice/positioning/positioning.html" target="_blank">
+                    <span class="cha_name">Positioning</span>
+                    <span class="cha_arrow">→</span>
+                </a>
+            </div>
+            <div class="Challenge_items fade-up">
+                <a href="../ice/signup/signup.html" target="_blank">
+                    <span class="cha_name">Signup</span>
+                    <span class="cha_arrow">→</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+</body>
+<footer class="site-footer">
+    <nav class="footer-nav">
+        <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="wwr/index.html">WWR</a></li>
+        <li><a href="ICE.html">ICE</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        </ul>
+    </nav>
+
+    <p class="legal">
+        ©copyright 2025. All rights reserved.
+    </p>
+    <p class="policies">
+        <a href="#">Terms of Service</a>
+        <span class="dot">•</span>
+        <a href="#">Privacy Policy</a>
+    </p>
+
+    <div class="social">
+        <a class="social__link facebook" href="https://facebook.com" target="_blank">
+            <img src="images/facebook.png" data-color="images/facebook-Icon-color.png" alt="Facebook icon">
+        </a>
+
+        <a class="social__link instagram" href="https://instagram.com" target="_blank">
+            <img src="images/instagram.png" data-color="images/instagram-Icon-color.png" alt="Instagram icon">
+        </a>
+
+        <a class="social__link youtube" href="https://youtube.com" target="_blank">
+            <img src="images/youtube.png" data-color="images/youtube-Icon-color.png" alt="YouTube icon">
+        </a>
+    </div>
+    <script>
+        document.querySelectorAll('.social__link').forEach(link => {
+        const img = link.querySelector('img');
+        const graySrc  = img.getAttribute('src');
+        const colorSrc = img.dataset.color;
+
+        link.addEventListener('mouseenter', () => {
+            img.src = colorSrc;
+        });
+
+        link.addEventListener('mouseleave', () => {
+            img.src = graySrc;
+        });
+        });
+    </script>
+  <img class="footer-logo" src="images/logo_title.png" alt="Elysian Logo">
+</footer>

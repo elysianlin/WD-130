@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Elysian • Client Report </title>
+    <link rel="icon" href="images/logo_circle.ico" type="img/x-ico" />
+</head>
+
+<script>
+    const footer = document.querySelector('footer, .site-footer');
+    const ioFooter = new IntersectionObserver(
+        ([entry]) => {
+        document.body.classList.toggle('at-footer', entry.intersectionRatio > 0.35);
+        },
+        {
+        threshold: [0, 0.35, 1],
+        rootMargin: '0px 0px 0px 0px'
+        }
+    );
+
+    if (footer) ioFooter.observe(footer);
+</script>
+
+<body>
+    <main id="content">
+        <header class="hero">
+            <div class="hero_top">
+                <a href=home.html><img id=logo src="images/logo_title.png" alt="Elysian Logo" ></a>
+                <nav class="nav_header">
+                    <ul class="nav_list">
+                        <a href="home.html">Home</a> |
+                        <a href="../wwr/index.html" target="_blank">WWR</a> |
+                        <a href="ICE.html">ICE</a> |
+                        <a href="aboutme.html">About Me</a> 
+                        <a href="client_report.html"> Cilent Report</a>
+                    </ul>
+                </nav>
+            </div>
+        
+            <div class="hero_center">
+                <h1>Elysian Lin</h1>
+                <p>WDD 130 Portal Page</p>
+            </div>
+
+            <div class="scroll-down">↓</div>
+        </header>
+
+        <section class="Client">
+            <h1>Client Report</h1>
+            <p></p>
+        </section>
+        <section class="lead">
+            <h1>Lead Developer Report</h1>
+            <p></p>
+        </section>
+        <section class="junior">
+            <h1>Junior Developer Report</h1>
+            <p></p>
+        </section>
+        <section>
+            <h1>General Experience and Reflections</h1>
+            <p></p>
+        </section>
+        
+        <script>
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (document.body.classList.contains('at-footer')) return;
+
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    } else {
+                        entry.target.classList.remove('show');
+                    }
+                    });
+                }, { threshold: 0.5 });
+
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+        
+        window.addEventListener("scroll", ()=> {
+            const hero = document.querySelector(".hero");
+            const scrollY = window.scrollY;
+            hero.style.backgroundPostionY = '${scrollY*0.4}px';      
+        });
+        </script>
+
+    </main>
+</body>
+<footer class="site-footer">
+    <nav class="footer-nav">
+        <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="/wwr/index.html">WWR</a></li>
+        <li><a href="ICE.html">ICE</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="client_report.html">Cilent Report</a></li>
+        </ul>
+    </nav>
+
+    <p class="legal">
+        ©copyright 2025. All rights reserved.
+    </p>
+    <p class="policies">
+        <a href="#">Terms of Service</a>
+        <span class="dot">•</span>
+        <a href="#">Privacy Policy</a>
+    </p>
+
+    <div class="social">
+        <a class="social__link facebook" href="https://facebook.com" target="_blank">
+            <img src="images/facebook.png" data-color="images/facebook-Icon-color.png" alt="Facebook icon">
+        </a>
+
+        <a class="social__link instagram" href="https://instagram.com" target="_blank">
+            <img src="images/instagram.png" data-color="images/instagram-Icon-color.png" alt="Instagram icon">
+        </a>
+
+        <a class="social__link youtube" href="https://youtube.com" target="_blank">
+            <img src="images/youtube.png" data-color="images/youtube-Icon-color.png" alt="YouTube icon">
+        </a>
+    </div>
+    <script>
+        document.querySelectorAll('.social__link').forEach(link => {
+        const img = link.querySelector('img');
+        const graySrc  = img.getAttribute('src');
+        const colorSrc = img.dataset.color;
+
+        link.addEventListener('mouseenter', () => {
+            img.src = colorSrc;
+        });
+
+        link.addEventListener('mouseleave', () => {
+            img.src = graySrc;
+        });
+        });
+    </script>
+  <img class="footer-logo" src="images/logo_title.png" alt="Elysian Logo">
+</footer>
+
+
+</html>
