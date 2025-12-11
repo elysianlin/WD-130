@@ -22,7 +22,7 @@ body {
     min-height: 100svh;
     display: flex;
     flex-direction: column;
-    background: url("images copy/_\ 拷貝.jpeg") no-repeat center center/cover;
+    background: url("images copy/_.jpeg") no-repeat center center/cover;
     background-attachment: fixed;
     justify-content: space-between;
     align-items: stretch;
